@@ -1,0 +1,3 @@
+[submodule "starlink"]
+	path = starlink
+	url = https://github.com/Starlink/starlink.git
