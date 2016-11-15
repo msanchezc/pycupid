@@ -19,7 +19,7 @@ CUPID_DIR = 'cupid'
 class custom_build_ext(build_ext):
     def run(self):
         # Build CUPID
-        #subprocess.call(['make'])
+        subprocess.call(['make'])
         # Then, build wrapper around it.
         build_ext.run(self)
 
