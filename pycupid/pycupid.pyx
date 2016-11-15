@@ -204,7 +204,7 @@ def _findclumps(method, data, variance, config, rms, velax=0, perspectrum=0):
 	ubound = shape - 1
 	data = data.flatten(order='F')
 	if variance:
-		if variance.shape == shape:
+		if not np.array_equal(variance.shape, shape):
 			raise ValueError("""Variance array must have the same 
 								shape as data array""")
 		variance = variance.flatten(order='F')
