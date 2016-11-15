@@ -30,6 +30,7 @@ cdef double[::1] gc(double[::1] data, double[::1] variance,
 
 	if ndfs is NULL:
 		return None
+	
 	el = data.size
 	ipo = <double *> PyMem_Malloc(el * sizeof(double))
 	cupid.cupidSumClumps(dtype, ipd, ndim, slbnd, subnd, el, ndfs,
@@ -61,7 +62,10 @@ cdef int[::1] rh(double[::1] data, double[::1] variance,
 	ndfs = cupid.cupidReinhold(dtype, ndim, slbnd, subnd,
 							   ipd, ipv, rms, config, velax,
 							   beamcorr, &status)
-
+	
+	if ndfs is NULL:
+		return None
+	
 	el = data.size
 	ipo = <int *> PyMem_Malloc(el * sizeof(int))
 	cupid.cupidSumClumps(dtype, ipd, ndim, slbnd, subnd, el, ndfs,
@@ -96,7 +100,10 @@ cdef int[::1] cf(double[::1] data, double[::1] variance,
 								ipd, ipv, rms, config, velax,
 								perspectrum, beamcorr, 
 								&backoff, &status)
-
+	
+	if ndfs is NULL:
+		return None
+	
 	el = data.size
 	ipo = <int *> PyMem_Malloc(el * sizeof(int))
 	cupid.cupidSumClumps(dtype, ipd, ndim, slbnd, subnd, el, ndfs,
@@ -129,7 +136,10 @@ cdef int[::1] fw(double[::1] data, double[::1] variance,
 	ndfs = cupid.cupidFellWalker(dtype, ndim, slbnd, subnd,
 								 ipd, ipv, rms, config, velax,
 								 perspectrum, beamcorr, &status)
-
+	
+	if ndfs is NULL:
+		return None
+	
 	el = data.size
 	ipo = <int *> PyMem_Malloc(el * sizeof(int))
 	cupid.cupidSumClumps(dtype, ipd, ndim, slbnd, subnd, el, ndfs,

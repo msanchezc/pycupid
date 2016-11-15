@@ -1,5 +1,5 @@
 current_dir := $(shell pwd)
-starlink_dir := $(current_dir)/star
+starlink_dir := $(current_dir)/pycupid/star
 
 unexport STARLINK
 unexport INSTALL

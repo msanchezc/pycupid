@@ -4,10 +4,7 @@
 {
     "distutils": {
         "depends": [
-            "cupid/include/cupid.h",
-            "star/include/ast.h",
-            "star/include/sae_par.h",
-            "star/include/star/hds_types.h"
+            "cupid/include/cupid.h"
         ],
         "include_dirs": [
             "star/include",
@@ -49,7 +46,7 @@
             "${ORIGIN}/star/lib"
         ]
     },
-    "module_name": "pycupid"
+    "module_name": "pycupid.pycupid"
 }
 END: Cython Metadata */
 
@@ -1628,7 +1625,7 @@ static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cyt
 static const char __pyx_k_unable_to_allocate_array_data[] = "unable to allocate array data.";
 static const char __pyx_k_should_be_of_type_int_float_or[] = " should be of type int, float or str";
 static const char __pyx_k_strided_and_direct_or_indirect[] = "<strided and direct or indirect>";
-static const char __pyx_k_home_manuel_pycupid_pycupid_pyc[] = "/home/manuel/pycupid/pycupid/pycupid.pyx";
+static const char __pyx_k_home_manuel_acalib_pycupid_pycu[] = "/home/manuel/acalib-pycupid/pycupid/pycupid.pyx";
 static const char __pyx_k_Buffer_view_does_not_expose_stri[] = "Buffer view does not expose strides";
 static const char __pyx_k_Can_only_create_a_buffer_that_is[] = "Can only create a buffer that is contiguous in memory.";
 static const char __pyx_k_Empty_shape_tuple_for_cython_arr[] = "Empty shape tuple for cython.array";
@@ -1701,7 +1698,7 @@ static PyObject *__pyx_n_s_fortran;
 static PyObject *__pyx_n_u_fortran;
 static PyObject *__pyx_n_s_gaussclumps;
 static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
-static PyObject *__pyx_kp_s_home_manuel_pycupid_pycupid_pyc;
+static PyObject *__pyx_kp_s_home_manuel_acalib_pycupid_pycu;
 static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_int32;
@@ -17680,7 +17677,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_u_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 1, 0, 1},
   {&__pyx_n_s_gaussclumps, __pyx_k_gaussclumps, sizeof(__pyx_k_gaussclumps), 0, 0, 1, 1},
   {&__pyx_kp_s_got_differing_extents_in_dimensi, __pyx_k_got_differing_extents_in_dimensi, sizeof(__pyx_k_got_differing_extents_in_dimensi), 0, 0, 1, 0},
-  {&__pyx_kp_s_home_manuel_pycupid_pycupid_pyc, __pyx_k_home_manuel_pycupid_pycupid_pyc, sizeof(__pyx_k_home_manuel_pycupid_pycupid_pyc), 0, 0, 1, 0},
+  {&__pyx_kp_s_home_manuel_acalib_pycupid_pycu, __pyx_k_home_manuel_acalib_pycupid_pycu, sizeof(__pyx_k_home_manuel_acalib_pycupid_pycu), 0, 0, 1, 0},
   {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_int32, __pyx_k_int32, sizeof(__pyx_k_int32), 0, 0, 1, 1},
@@ -17917,7 +17914,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__20 = PyTuple_Pack(6, __pyx_n_s_data, __pyx_n_s_rms, __pyx_n_s_config, __pyx_n_s_variance, __pyx_n_s_velax, __pyx_n_s_clumps); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(5, 0, 6, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_pycupid_pycupid_pyc, __pyx_n_s_gaussclumps, 140, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(5, 0, 6, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_acalib_pycupid_pycu, __pyx_n_s_gaussclumps, 140, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 140, __pyx_L1_error)
 
   /* "pycupid/pycupid.pyx":144
  * 	return clumps
@@ -17929,7 +17926,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__22 = PyTuple_Pack(6, __pyx_n_s_data, __pyx_n_s_rms, __pyx_n_s_config, __pyx_n_s_variance, __pyx_n_s_velax, __pyx_n_s_clumps); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(5, 0, 6, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_pycupid_pycupid_pyc, __pyx_n_s_reinhold, 144, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(5, 0, 6, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_acalib_pycupid_pycu, __pyx_n_s_reinhold, 144, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 144, __pyx_L1_error)
 
   /* "pycupid/pycupid.pyx":148
  * 	return clumps
@@ -17941,7 +17938,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__24 = PyTuple_Pack(7, __pyx_n_s_data, __pyx_n_s_rms, __pyx_n_s_config, __pyx_n_s_variance, __pyx_n_s_velax, __pyx_n_s_perspectrum, __pyx_n_s_clumps); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(6, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_pycupid_pycupid_pyc, __pyx_n_s_clumpfind, 148, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(6, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_acalib_pycupid_pycu, __pyx_n_s_clumpfind, 148, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 148, __pyx_L1_error)
 
   /* "pycupid/pycupid.pyx":152
  * 	return clumps
@@ -17953,7 +17950,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__26 = PyTuple_Pack(7, __pyx_n_s_data, __pyx_n_s_rms, __pyx_n_s_config, __pyx_n_s_variance, __pyx_n_s_velax, __pyx_n_s_perspectrum, __pyx_n_s_clumps); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__26);
   __Pyx_GIVEREF(__pyx_tuple__26);
-  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(6, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_pycupid_pycupid_pyc, __pyx_n_s_fellwalker, 152, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(6, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_acalib_pycupid_pycu, __pyx_n_s_fellwalker, 152, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 152, __pyx_L1_error)
 
   /* "pycupid/pycupid.pyx":156
  * 	return clumps
@@ -17965,7 +17962,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__28 = PyTuple_Pack(13, __pyx_n_s_method, __pyx_n_s_data, __pyx_n_s_variance, __pyx_n_s_config, __pyx_n_s_rms, __pyx_n_s_velax, __pyx_n_s_perspectrum, __pyx_n_s_aconfig, __pyx_n_s_key, __pyx_n_s_value, __pyx_n_s_shape, __pyx_n_s_ubound, __pyx_n_s_clumps); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
-  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(7, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_pycupid_pycupid_pyc, __pyx_n_s_findclumps, 156, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(7, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_manuel_acalib_pycupid_pycu, __pyx_n_s_findclumps, 156, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 156, __pyx_L1_error)
 
   /* "View.MemoryView":282
  *         return self.name

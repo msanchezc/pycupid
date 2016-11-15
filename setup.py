@@ -1,21 +1,27 @@
-import os.path
+import os
+import sys
 import subprocess
-from distutils.core import setup, Extension
-from Cython.Build import cythonize, build_ext
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+from distutils.extension import Extension
+from distutils.command.build_ext import build_ext
+try:
+    from Cython.Build import cythonize
+    USE_CYTHON = True
+except ImportError:
+    USE_CYTHON = False
 
 WRAPPER_SRC_DIR = 'pycupid'
 CUPID_SRC_DIR = os.path.join('cupid', 'src')
 
-class CustomBuild(build_ext):
+class custom_build_ext(build_ext):
     def run(self):
         # Build CUPID
-        subprocess.call(['make'])
+        #subprocess.call(['make'])
         # Then, build wrapper around it.
         build_ext.run(self)
-
-wrapper_sources = [
-    'pycupid.pyx',
-]
 
 cupid_sources = [
     'cupidcfaddpixel.c',
@@ -64,6 +70,10 @@ cupid_sources = [
     'cupidsumclumps.c',
 ]
 
+ext = '.pyx' if USE_CYTHON else '.c'
+
+wrapper_sources = [source + ext for source in ['pycupid',]]
+
 wrapper_sources = [os.path.join(WRAPPER_SRC_DIR, s) for s in wrapper_sources]
 cupid_sources = [os.path.join(CUPID_SRC_DIR, s) for s in cupid_sources]
 
@@ -75,7 +85,7 @@ extensions = [
         ext_sources,
         include_dirs = [os.path.join("star", "include"), os.path.join("cupid", "include")],
         library_dirs = [os.path.join("star", "lib")],
-        runtime_library_dirs = [os.path.join("${ORIGIN}", "star", "lib")],
+        extra_link_args = ["-Wl,-rpath=" + os.path.join("$ORIGIN", "star", "lib")],
         libraries = [
             "ast", 
             "err_standalone", 
@@ -112,16 +122,23 @@ extensions = [
     ),
 ]
 
+if USE_CYTHON:
+    extensions = cythonize(extensions)
+
 setup(
     name = 'pycupid',
     version = '0.1.0',
     author = u'Manuel Sánchez',
     author_email = 'manuel.sanchez@linux.com',
     packages = ['pycupid'],
+    package_data = {'pycupid': ['star/lib/*',]},
     url = 'https://github.com/msanchezc/pycupid',
     description = 'Python wrappers for Starlink\'s CUPID package',
-    ext_modules = cythonize(extensions),
+    ext_modules = extensions,
     cmdclass = {
-        'build_ext': CustomBuild,
+        'build_ext': custom_build_ext,
     },
+    install_requires = {
+        'numpy >= 1.11.2',
+    }
 )
