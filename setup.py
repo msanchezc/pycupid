@@ -13,8 +13,8 @@ try:
 except ImportError:
     USE_CYTHON = False
 
-WRAPPER_SRC_DIR = 'pycupid'
-CUPID_SRC_DIR = os.path.join('cupid', 'src')
+WRAPPER_DIR = 'pycupid'
+CUPID_DIR = 'cupid'
 
 class custom_build_ext(build_ext):
     def run(self):
@@ -22,6 +22,10 @@ class custom_build_ext(build_ext):
         #subprocess.call(['make'])
         # Then, build wrapper around it.
         build_ext.run(self)
+
+wrapper_sources = [
+    'pycupid',
+]
 
 cupid_sources = [
     'cupidcfaddpixel.c',
@@ -72,10 +76,8 @@ cupid_sources = [
 
 ext = '.pyx' if USE_CYTHON else '.c'
 
-wrapper_sources = [source + ext for source in ['pycupid',]]
-
-wrapper_sources = [os.path.join(WRAPPER_SRC_DIR, s) for s in wrapper_sources]
-cupid_sources = [os.path.join(CUPID_SRC_DIR, s) for s in cupid_sources]
+wrapper_sources = [os.path.join(WRAPPER_DIR, s + ext) for s in wrapper_sources]
+cupid_sources = [os.path.join(CUPID_DIR, "src", s) for s in cupid_sources]
 
 ext_sources = wrapper_sources + cupid_sources
 
@@ -83,8 +85,9 @@ extensions = [
     Extension(
         "pycupid.pycupid",
         ext_sources,
-        include_dirs = [os.path.join("star", "include"), os.path.join("cupid", "include")],
-        library_dirs = [os.path.join("star", "lib")],
+        include_dirs = [os.path.join(WRAPPER_DIR, "star", "include"), 
+                        os.path.join(CUPID_DIR, "include")],
+        library_dirs = [os.path.join(WRAPPER_DIR, "star", "lib")],
         extra_link_args = ["-Wl,-rpath=" + os.path.join("$ORIGIN", "star", "lib")],
         libraries = [
             "ast", 
