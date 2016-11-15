@@ -11,20 +11,24 @@ export F77 := gfortran
 
 all: buildcupid
 
-.PHONY: buildsupport
-buildsupport: updatestarlink
-	cd ./starlink && ./bootstrap --buildsupport
-
 .PHONY: buildcupid
-buildcupid: buildsupport
-	cd ./starlink && ./bootstrap
-	$(MAKE) -C ./starlink configure-deps
-	cd ./starlink && ./configure -C --without-stardocs
-	$(MAKE) -C ./starlink $(starlink_dir)/manifests/cupid
+buildcupid: $(starlink_dir)/bin/cupid
+
+.PHONY: buildsupport
+buildsupport: $(starlink_dir)/buildsupport
 
 .PHONY: updatestarlink
 updatestarlink: 
 	git submodule update --init
+	
+$(starlink_dir)/buildsupport: updatestarlink
+	cd ./starlink && ./bootstrap --buildsupport
+
+$(starlink_dir)/bin/cupid: buildsupport
+	cd ./starlink && ./bootstrap
+	$(MAKE) -C ./starlink configure-deps
+	cd ./starlink && ./configure -C --without-stardocs
+	$(MAKE) -C ./starlink $(starlink_dir)/manifests/cupid
 
 .PHONY: clean
 clean:
